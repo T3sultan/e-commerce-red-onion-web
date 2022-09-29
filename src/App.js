@@ -7,6 +7,9 @@ import Signup from "./screens/auth/Signup/Signup";
 import PageNotFound from "./screens/app/Home/PageNotFound/PageNotFound";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import BreakFast from "./screens/app/Home/BreakFast/BreakFast";
+import Lunch from "./screens/app/Home/Lunch/Lunch";
+import Dinner from "./screens/app/Home/Dinner/Dinner";
 
 function App() {
   return (
@@ -18,6 +21,10 @@ function App() {
         <Route path="/service/:serviceId" element={<ServiceDetails />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
+        {/* <Route path="/breakfast" element={<BreakFast />}></Route>
+        <Route path="/lunch" element={<Lunch />}></Route>
+        <Route path="/dinner" element={<Dinner />}></Route> */}
+
         <Route path="*" element={<PageNotFound />}></Route>
       </Routes>
       <Footer></Footer>
