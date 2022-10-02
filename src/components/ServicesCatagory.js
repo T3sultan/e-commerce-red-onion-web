@@ -6,7 +6,7 @@ import Skeleton from "./Skeleton";
 
 const ServicesCatagory = () => {
   const [menuTab, setMenuTab] = useState("breakfast");
-  const [loading, setLoading] = useState(false);
+  const [loading] = useState(false);
   const [services, setServices] = useState([]);
 
   useEffect(() => {
@@ -14,6 +14,7 @@ const ServicesCatagory = () => {
       .then(res => res.json())
       .then(data => setServices(data));
   }, []);
+
   const handleMenuTabs = type => {
     setMenuTab(type);
     console.log("break");

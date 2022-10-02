@@ -1,12 +1,8 @@
 .header-container {
   justify-content: space-between;
+  position: sticky;
+  top: 0;
 }
 .logo-container {
   cursor: pointer;
 }
-/* .auth-container {
-  border: 1px solid red;
-  background-color: red;
-  border-radius: 15px;
-  color: white;
-} */

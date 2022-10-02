@@ -1,15 +1,18 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const FoodItem = ({ image, name, description, price, food }) => {
-  //   console.log(image, name, description, price);
+const FoodItem = ({ image, name, description, price, _id }) => {
+  const navigate = useNavigate();
 
-  //   const handleRoute = () => {
-  //     console.log("checked", serviceId);
-  //   };
+  const navigateDetails = _id => {
+    navigate(`/service/${_id}`);
+  };
 
   return (
-    <div className="bg-white  border-gray-100 transition transform duration-700 hover:shadow-xl hover:scale-105 p-4 rounded-lg relative">
+    <div
+      onClick={() => navigateDetails(_id)}
+      className="bg-white  border-gray-200 transition transform duration-700 hover:shadow-xl hover:scale-105 p-4 rounded-lg relative"
+    >
       <img
         className="w-64 mx-auto transform transition duration-300 hover:scale-105"
         src={image}
