@@ -4,8 +4,14 @@ import logo from "../../../assets/logo2.png";
 import imageBackground from "../../../assets/bannerbackground.png";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useSendPasswordResetEmail,
+  useSignInWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
 import Loading from "../../app/Home/Loading";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import SocilLogin from "./SocilLogin";
 
 const Login = () => {
   const emailRef = useRef("");
@@ -15,10 +21,12 @@ const Login = () => {
   let from = location.state?.from?.pathname || "/";
   let errorElement;
 
+  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+
   const [signInWithEmailAndPassword, user, error, loading] =
     useSignInWithEmailAndPassword(auth);
 
-  if (loading) {
+  if (loading || sending) {
     return <Loading />;
   }
   if (user) {
@@ -35,6 +43,15 @@ const Login = () => {
   };
   const navigateSignUp = () => {
     navigate("/signup");
+  };
+  const resetPassword = async () => {
+    const email = emailRef.current.value;
+    if (email) {
+      await sendPasswordResetEmail(email);
+      toast("Send Email");
+    } else {
+      toast("Please enter your email address");
+    }
   };
 
   return (
@@ -80,7 +97,7 @@ const Login = () => {
           <br />
 
           <br />
-          <div className="-mt-9">
+          <div className="-mt-9 ">
             <input
               className="bg-red-500 rounded h-9 w-full text-white"
               type="submit"
@@ -88,18 +105,27 @@ const Login = () => {
             />
           </div>
           {errorElement}
-          <p className=" cursor-pointer font-bold">
+          <p className=" cursor-pointer font-bold text-gray-700 mt-2">
             New to red-onion?
             <Link
               onClick={navigateSignUp}
               to="/signup"
-              className="text-red-500 font-bold text-decoration-none"
+              className="text-blue-400 font-bold text-decoration-none"
             >
               {" "}
               Please Signup
             </Link>
           </p>
         </form>
+        <p className=" cursor-pointer font-bold text-gray-500 mt-2">
+          Forget Password?
+          <button onClick={resetPassword} className="text-red-400 font-bold ">
+            {" "}
+            Reset Password
+          </button>
+        </p>
+        <SocilLogin />
+        <ToastContainer />
       </div>
     </div>
   );
