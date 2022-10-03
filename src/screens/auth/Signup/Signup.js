@@ -3,11 +3,28 @@ import "./Signup.css";
 import logo from "../../../assets/logo2.png";
 import imageBackground from "../../../assets/bannerbackground.png";
 import { Link, useNavigate } from "react-router-dom";
+import auth from "./../../../firebase.init";
+import {
+  useCreateUserWithEmailAndPassword,
+  useUpdateProfile,
+} from "react-firebase-hooks/auth";
 
 const Signup = () => {
   const navigate = useNavigate();
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth);
+
   const navigateSignup = () => {
     navigate("/login");
+  };
+  const handleSignup = async event => {
+    event.preventDefault();
+    const name = event.target.name.value;
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+
+    await createUserWithEmailAndPassword(email, password);
+    navigate("/home");
   };
 
   return (
@@ -26,7 +43,7 @@ const Signup = () => {
       {/* <div> */}
       <div className="grid justify-items-center">
         <img className="w-2/12" src={logo} alt="" />
-        <form action="">
+        <form onSubmit={handleSignup}>
           <div>
             <input
               className="rounded h-9 mt-2 pl-2 w-full"

@@ -7,6 +7,7 @@ import Signup from "./screens/auth/Signup/Signup";
 import PageNotFound from "./screens/app/Home/PageNotFound/PageNotFound";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import RequireAuth from "./screens/auth/Login/RequireAuth";
 
 function App() {
   return (
@@ -15,7 +16,14 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/home" element={<Home />}></Route>
-        <Route path="/service/:serviceId" element={<ServiceDetails />}></Route>
+        <Route
+          path="/service/:serviceId"
+          element={
+            <RequireAuth>
+              <ServiceDetails />
+            </RequireAuth>
+          }
+        ></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
         {/* <Route path="/breakfast" element={<BreakFast />}></Route>
