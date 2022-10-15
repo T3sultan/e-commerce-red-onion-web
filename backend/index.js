@@ -31,11 +31,33 @@ async function run() {
       res.send(result);
     });
     app.get("/service", async (req, res) => {
+      //pagination
+      const page = parseInt(req.query.page);
+      const size = parseInt(req.query.size);
+
       const query = {};
       const cursor = productsCollection.find(query);
-      const services = await cursor.toArray();
+
+      //pagination
+      let services;
+      if (page || size) {
+        services = await cursor
+          .skip(page * size)
+          .limit(size)
+          .toArray();
+      } else {
+        services = await cursor.toArray();
+      }
+
       res.send(services);
     });
+
+    //pagination
+    app.get("/serviceCount", async (req, res) => {
+      const count = await productsCollection.estimatedDocumentCount();
+      res.send({ count });
+    });
+
     app.get("/service/:id", async (req, res) => {
       const id = req.params.id;
       const query = { _id: ObjectId(id) };
