@@ -1,6 +1,5 @@
 [
   {
-    "_id": 1,
     "food": "breakfast",
     "name": "Bagel and cream cheese",
     "description": "How we dream about our future",
@@ -8,7 +7,6 @@
     "image": "https://i.ibb.co/BL1cWwr/breakfast1.png"
   },
   {
-    "_id": 2,
     "food": "breakfast",
     "name": "Breakfast sandwich",
     "description": "How we dream about our future",
@@ -16,7 +14,6 @@
     "image": "https://i.ibb.co/nwtLVBn/breakfast2.png"
   },
   {
-    "_id": 3,
     "food": "breakfast",
     "name": "Baked Chiken",
     "description": "How we dream about our future",
@@ -24,7 +21,6 @@
     "image": "https://i.ibb.co/6nvsT3k/breakfast3.png"
   },
   {
-    "_id": 4,
     "food": "breakfast",
     "name": "Full Breakfast Fried Egg Toast Brunch",
     "description": "How we dream about our future",
@@ -32,7 +28,6 @@
     "image": "https://i.ibb.co/NpSXSWM/breakfast4.png"
   },
   {
-    "_id": 5,
     "food": "breakfast",
     "name": "Toast Croissant Fried egg",
     "description": "How we dream about our future",
@@ -40,7 +35,6 @@
     "image": "https://i.ibb.co/9gJm9rJ/breakfast5.png"
   },
   {
-    "_id": 6,
     "food": "breakfast",
     "name": "Eggs Benedict",
     "description": "How we dream about our future",
@@ -48,7 +42,6 @@
     "image": "https://i.ibb.co/hRT2Yw8/breakfast6.png"
   },
   {
-    "_id": 7,
     "food": "dinner",
     "name": "Healthy Meal Plan",
     "description": "How we dream about our future",
@@ -56,7 +49,6 @@
     "image": "https://i.ibb.co/fCLPWJ3/dinner1.png"
   },
   {
-    "_id": 8,
     "food": "dinner",
     "name": "Indian Lunch",
     "description": "How we dream about our future",
@@ -64,7 +56,6 @@
     "image": "https://i.ibb.co/vsVG7ZV/dinner2.png"
   },
   {
-    "_id": 9,
     "food": "dinner",
     "name": "Fried Chicken Bento",
     "description": "How we dream about our future",
@@ -72,7 +63,6 @@
     "image": "https://i.ibb.co/crbTZ8X/dinner3.png"
   },
   {
-    "_id": 10,
     "food": "dinner",
     "name": "Beef Steak",
     "description": "How we dream about our future",
@@ -80,7 +70,6 @@
     "image": "https://i.ibb.co/0jC0Vpq/dinner4.png"
   },
   {
-    "_id": 11,
     "food": "dinner",
     "name": "Tarragon-Rubbed-Salmon",
     "description": "How we dream about our future",
@@ -88,7 +77,6 @@
     "image": "https://i.ibb.co/3MRN48Q/dinner5.png"
   },
   {
-    "_id": 12,
     "food": "dinner",
     "name": "Honey-Soy-Glazed Salmon with Peppers",
     "description": "How we dream about our future",
@@ -96,7 +84,6 @@
     "image": "https://i.ibb.co/mF0XFRc/dinner6.png"
   },
   {
-    "_id": 13,
     "food": "lunch",
     "name": "Salmon with Grapefruit and Lentil Salad",
     "description": "How we dream about our future",
@@ -104,7 +91,6 @@
     "image": "https://i.ibb.co/KNZ1sNt/lunch1.png"
   },
   {
-    "_id": 14,
     "food": "lunch",
     "name": "French Fries with cheese",
     "description": "How we dream about our future",
@@ -112,7 +98,6 @@
     "image": "https://i.ibb.co/MBrjR30/lunch2.png"
   },
   {
-    "_id": 15,
     "food": "lunch",
     "name": "Lemony Salmon Piccata",
     "description": "How we dream about our future",
@@ -120,7 +105,6 @@
     "image": "https://i.ibb.co/GQrHTzd/lunch3.png"
   },
   {
-    "_id": 16,
     "food": "lunch",
     "name": "Gralic Butter Baked Salmon",
     "description": "How we dream about our future",
@@ -128,7 +112,6 @@
     "image": "https://i.ibb.co/6Bth0Dg/lunch4.png"
   },
   {
-    "_id": 17,
     "food": "lunch",
     "name": "Pork Tenderloin With Quinoa Pilaf",
     "description": "How we dream about our future",
@@ -136,7 +119,6 @@
     "image": "https://i.ibb.co/Cn6rp78/lunch5.png"
   },
   {
-    "_id": 18,
     "food": "lunch",
     "name": "Baked Chiken",
     "description": "How we dream about our future",

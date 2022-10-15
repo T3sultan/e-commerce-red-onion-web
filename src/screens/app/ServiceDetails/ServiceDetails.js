@@ -3,17 +3,20 @@ import { useParams } from "react-router-dom";
 
 const ServiceDetails = () => {
   const { serviceId } = useParams();
-  const [foods] = useState([]);
+  const [foods, setFoods] = useState({});
   useEffect(() => {
-    // fetch("service.json")
-    //   .then(res => res.json())
-    //   .then(data => setFoods(data));
+    fetch(`http://localhost:5000/service/${serviceId}`)
+      .then(res => res.json())
+      .then(data => setFoods(data));
   }, []);
 
+  console.log(serviceId);
   return (
     <div>
-      <p>id :{serviceId}</p>
-      <h4>Name: {foods.name}</h4>
+      <div>
+        <p>{foods.name}</p>
+      </div>
+      <div></div>
     </div>
   );
 };
