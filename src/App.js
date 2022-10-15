@@ -10,6 +10,7 @@ import Footer from "./components/Footer/Footer";
 import RequireAuth from "./screens/auth/Login/RequireAuth";
 import Checkout from "./screens/app/Checkout/Checkout";
 import { ToastContainer } from "react-toastify";
+import AllProducts from "./screens/AllProuduct/AllProducts";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
             </RequireAuth>
           }
         ></Route>
+        <Route path="/allProducts" element={<AllProducts />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
 

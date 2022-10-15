@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import FoodItem from "./FoodItem";
+import { Icon } from "@iconify/react";
 
 import "./ServiceCategory.css";
 import Skeleton from "./Skeleton";
+import { Link } from "react-router-dom";
 
 const ServicesCatagory = () => {
   const [menuTab, setMenuTab] = useState("breakfast");
@@ -67,6 +69,16 @@ const ServicesCatagory = () => {
               <FoodItem key={item._id} {...item} />
             )
           )}
+      </div>
+      <div className="grid justify-items-stretch ">
+        <div className=" bg-gray-50 text-end mt-8  w-28 h-8 grid justify-self-end  justify-center items-center  rounded-xl border-gray-500 transition transform duration-700 hover:shadow-xl hover:scale-105  ">
+          <Link to="/allProducts">
+            <button className=" flex items-center ">
+              <p className="text-sm text-blue-500 font-bold "> see products</p>
+              <Icon icon="ep:caret-right" />
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
   );
