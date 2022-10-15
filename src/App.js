@@ -8,6 +8,8 @@ import PageNotFound from "./screens/app/Home/PageNotFound/PageNotFound";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import RequireAuth from "./screens/auth/Login/RequireAuth";
+import Checkout from "./screens/app/Checkout/Checkout";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -24,15 +26,21 @@ function App() {
             </RequireAuth>
           }
         ></Route>
+        <Route
+          path="/checkout/:serviceId"
+          element={
+            <RequireAuth>
+              <Checkout />
+            </RequireAuth>
+          }
+        ></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
-        {/* <Route path="/breakfast" element={<BreakFast />}></Route>
-        <Route path="/lunch" element={<Lunch />}></Route>
-        <Route path="/dinner" element={<Dinner />}></Route> */}
 
         <Route path="*" element={<PageNotFound />}></Route>
       </Routes>
       <Footer></Footer>
+      <ToastContainer />
     </div>
   );
 }

@@ -21,6 +21,7 @@ async function run() {
     await client.connect();
     const products = client.db("redOnionProducts");
     const productsCollection = products.collection("products");
+    const orderCollection = products.collection("orders");
 
     //service api
 
@@ -40,6 +41,13 @@ async function run() {
       const query = { _id: ObjectId(id) };
       const service = await productsCollection.findOne(query);
       res.send(service);
+    });
+
+    //order api
+    app.post("/order", async (req, res) => {
+      const order = req.body;
+      const result = await orderCollection.insertOne(order);
+      res.send(result);
     });
   } finally {
     // await client.close()
