@@ -75,7 +75,7 @@ const ServicesCatagory = () => {
           <Link to="/allProducts">
             <button className=" flex items-center ">
               <p className="text-sm text-blue-500 font-bold "> see products</p>
-              <Icon icon="ep:caret-right" />
+              <Icon className="text-blue-700" icon="ep:caret-right" />
             </button>
           </Link>
         </div>
